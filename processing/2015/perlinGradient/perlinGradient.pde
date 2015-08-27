@@ -1,4 +1,4 @@
-boolean captureFrames = true;
+boolean captureFrames = false;
 int nFrames = 64;
 
 Gradient gradient;
