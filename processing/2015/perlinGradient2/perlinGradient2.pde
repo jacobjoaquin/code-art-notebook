@@ -11,7 +11,7 @@ float phaseInc = 1.0 / nFrames;
 void setup() {
   size(500, 500, P2D);
   frameRate(30);
-  
+
   color c1 = color(32);
   color c2 = color(180, 0, 255);
   float amt1 = 0.1;
@@ -22,18 +22,11 @@ void setup() {
   gradient.add(c1, amt1);
   gradient.add(c1, 10);
   gradient.add(c1, amt1);
-
-//  gradient.add(color(0), amt);
-//  gradient.add(c, amt);
-//  gradient.add(c, 10);
-//  gradient.add(c, amt);
-//  gradient.add(color(0), amt);
-
 }
 
 void draw() {
   background(0);
-  
+
   loadPixels();
   for (int y = 0; y < height / 2; y++) {
     int yOffset = y * width;
@@ -46,7 +39,7 @@ void draw() {
       pixels[yOffset + x] = gradient.getColor(v);
     }
   }
-  
+
   for (int y = 0; y < height / 2; y++) {
     int yOffset = y * width;
     for (int x = 0; x < width / 2; x++) {
@@ -60,13 +53,13 @@ void draw() {
       pixels[((height - 1) * width - y * width - 1) + x] = pixels[yOffset + x];
     }
   }
-  
-  
+
+
   updatePixels();
 
   phase += phaseInc;
   phase -= int(phase);
-  
+
   if (captureFrames) {
     saveFrame("./gif/frame#####.gif");
     if (frameCount == nFrames) {
@@ -74,3 +67,4 @@ void draw() {
     }
   }
 }
+
