@@ -2,7 +2,7 @@
 
 #define LED_PIN_0    2
 #define LED_PIN_1    7
-#define LED_PIN-2    14
+#define LED_PIN_2    14
 #define COLOR_ORDER  GRB
 #define CHIPSET      WS2811
 #define BRIGHTNESS   255
